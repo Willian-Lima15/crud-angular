@@ -6,7 +6,7 @@
         avatar: string;
     }
 
-    export interface RensponseUres {
+    export interface RensponseUsers {
         page: number;
         per_page: number;
         total: number;

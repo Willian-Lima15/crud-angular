@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RensponseUsers } from 'src/app/shared/users.model';
-import {HttpClient} from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,10 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<RensponseUsers> { //Retorna usuario response
+  getListaUsuarios(): Observable<RensponseUsers> { //Retorna lista de usuarios response
 
     return this.http.get<RensponseUsers>(this.url);
   }
+
+
 }

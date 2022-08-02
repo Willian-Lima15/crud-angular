@@ -9,15 +9,15 @@ import { RensponseUsers } from '../shared/users.model';
 })
 export class UsersComponent implements OnInit {
 
-  responseUsers!: RensponseUsers;
+  responseUsersList!: RensponseUsers;
 
   constructor(
     private usersService: UsersService
   ) { }
 
   ngOnInit(): void {
-    this.usersService.getUsers()
-      .subscribe(res => this.responseUsers = res)
+    this.usersService.getListaUsuarios()
+      .subscribe(res => this.responseUsersList = res)
   }
 
 }

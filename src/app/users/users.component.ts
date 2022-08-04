@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../core/services/users.service';
-import { RensponseUsers } from '../shared/users.model';
+import { ResponseUsers } from '../shared/users.model';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +9,7 @@ import { RensponseUsers } from '../shared/users.model';
 })
 export class UsersComponent implements OnInit {
 
-  responseUsersList!: RensponseUsers;
+  responseUsersList!: ResponseUsers;
 
   constructor(
     private usersService: UsersService

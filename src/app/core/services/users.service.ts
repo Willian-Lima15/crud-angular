@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RensponseUsers } from 'src/app/shared/users.model';
+import { ResponseCreate, RequestCreate } from 'src/app/shared/createUsers';
+import { ResponseUsers } from 'src/app/shared/users.model';
 
 
 @Injectable({
@@ -13,9 +14,14 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getListaUsuarios(): Observable<RensponseUsers> { //Retorna lista de usuarios response
+  getListaUsuarios(): Observable<ResponseUsers> { //Retorna lista de usuarios response
 
-    return this.http.get<RensponseUsers>(this.url);
+    return this.http.get<ResponseUsers>(this.url);
+  }
+
+  criarUsuario(request: RequestCreate): Observable<ResponseCreate> {
+
+    return this.http.post<ResponseCreate>(this.url, request);
   }
 
 

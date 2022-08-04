@@ -1,0 +1,13 @@
+<h2>Criar usuário</h2>
+
+<div>
+  <form action="" [formGroup]="formCreateUser">
+    <label for="">Nome: </label>
+    <input type="text" formControlName="nome">
+    <br><br>
+    <label for="">Profissão: </label>
+    <input type="text" formControlName="proficao">
+    <br><br>
+    <button (click)="salvar()">Gravar</button>
+  </form>
+</div>

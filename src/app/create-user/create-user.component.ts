@@ -18,19 +18,19 @@ export class CreateUserComponent implements OnInit {
     private userService: UsersService
   ) { }
 
-  usuarioResponse!: ResponseCreate
+  response!: ResponseCreate
 
   ngOnInit(): void {
     this.formCreateUser = this.fb.group({
-      nome: [''],
-      proficao: ['']
-    })
+      name: [''],
+      job: ['']
+    });
   }
 
   salvar() {
     this.userService.criarUsuario(this.usuario).subscribe((res)=>{
-        this.usuarioResponse = res;
-    })
+        this.response = res;
+    });
   }
 
 }

@@ -1,1 +1,13 @@
+<h2>Editar usuário</h2>
 
+<div *ngIf="usuario">
+  <form>
+    <label for="">Nome: </label>
+    <input [(ngModel)]="usuario.name" name="name">
+    <br><br>
+    <label for="">Profissão: </label>
+    <input [(ngModel)]="usuario.job" name="job">
+    <br><br>
+    <button (click)="update()">Atualizar</button>
+  </form>
+</div>

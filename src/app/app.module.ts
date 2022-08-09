@@ -18,7 +18,7 @@ const routes: Routes = [
     path:'users/create', component: CreateUserComponent
   },
   {
-  path:'user/update/:id', component: UpdateUserComponent
+  path:'update-user/:id', component: UpdateUserComponent
   }
 ];
 

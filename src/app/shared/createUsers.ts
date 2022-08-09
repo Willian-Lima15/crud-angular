@@ -1,13 +1,13 @@
- export interface RequestCreate {
-      name: string;
-      job: string;
+ export class RequestCreate {
+      public name!: string;
+      public job!: string;
   }
 
-    export interface ResponseCreate {
-        name: string;
-        job: string;
-        id: string;
-        createdAt: Date;
+    export class ResponseCreate {
+      public  name!: string;
+      public  job!: string;
+      public  id!: string;
+      public  createdAt!: Date;
     }
 
 

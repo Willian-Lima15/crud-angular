@@ -1,12 +1,12 @@
 <h2>Criar usuário</h2>
 
 <div>
-  <form action="" [formGroup]="formCreateUser">
+  <form>
     <label for="">Nome: </label>
-    <input type="text" formControlName="name" [ngModel]="usuario.name">
+    <input [(ngModel)]="usuario.name" name="name">
     <br><br>
     <label for="">Profissão: </label>
-    <input type="text" formControlName="job" [ngModel]="usuario.job">
+    <input [(ngModel)]="usuario.job" name="job">
     <br><br>
     <button (click)="salvar()">Gravar</button>
   </form>

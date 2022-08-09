@@ -7,7 +7,8 @@ import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './core/header/header.component';
 import { CreateUserComponent } from './create-user/create-user.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
   },
   {
     path:'users/create', component: CreateUserComponent
+  },
+  {
+  path:'user/update/:id', component: UpdateUserComponent
   }
 ];
 
@@ -23,12 +27,14 @@ const routes: Routes = [
     AppComponent,
     UsersComponent,
     HeaderComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

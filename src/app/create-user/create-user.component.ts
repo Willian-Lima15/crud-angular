@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UsersService } from '../core/services/users.service';
-import { RequestCreate, ResponseCreate } from '../shared/createUsers';
+import { RequestCreate, ResponseCreate } from '../shared/users.model';
+
 
 @Component({
   selector: 'app-create-user',

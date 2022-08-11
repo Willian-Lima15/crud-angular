@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../core/services/users.service';
-import { RequestUpdate } from '../shared/user.model';
+import { RequestUpdate } from '../shared/users.model';
 
 @Component({
   selector: 'app-update-user',
@@ -10,7 +10,7 @@ import { RequestUpdate } from '../shared/user.model';
 })
 export class UpdateUserComponent implements OnInit {
 
-  id: any;
+  id:any;
   usuario!: RequestUpdate;
 
   constructor(
@@ -19,7 +19,7 @@ export class UpdateUserComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id')
+    this.id = this.route.snapshot.paramMap.get('id');
     this.userService.getUser(this.id).subscribe((res)=> {
       this.usuario = {
         name: `${res.data.first_name } ${res.data.last_name }`,
@@ -30,8 +30,8 @@ export class UpdateUserComponent implements OnInit {
 
   update() {
     this.userService.updateUser(this.id, this.usuario).subscribe(res=> {
-      alert(`Atualizado`)
-    })
+      alert(`Atualizado: Data ${res.updateAt}, Nome ${res.name}, Profição${res.job}`)
+    });
   }
 
 }

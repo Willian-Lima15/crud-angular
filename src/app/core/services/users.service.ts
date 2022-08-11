@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ResponseCreate, RequestCreate } from 'src/app/shared/createUsers';
-import { RequestUpdate, ResponseUser } from 'src/app/shared/user.model';
-import { ResponseUsers } from 'src/app/shared/users.model';
+import { RequestCreate, RequestUpdate, ResponseCreate, ResponseUpdate, ResponseUser, ResponseUsers } from 'src/app/shared/users.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +13,6 @@ export class UsersService {
 
   getUsers(): Observable<ResponseUsers> {
     //Retorna lista de usuarios response
-
     return this.http.get<ResponseUsers>(this.url);
   }
 
@@ -24,14 +21,20 @@ export class UsersService {
   }
 
   getUser(id: string): Observable<ResponseUser> {
-    const url = `${this.url}/${id}`;
+    const _url = `${this.url}/${id}`;
 
-    return this.http.get<ResponseUser>(url);
+    return this.http.get<ResponseUser>(_url);
   }
 
-  updateUser(id: string, usuario: RequestUpdate):Observable<RequestUpdate> {
-    const url = `${this.url}/${id}`;
+  updateUser(id: string, usuario: RequestUpdate):Observable<ResponseUpdate> {
+    const _url = `${this.url}/${id}`;
 
-    return this.http.post<RequestUpdate>(url, usuario);
+    return this.http.post<ResponseUpdate>(_url, usuario);
+  }
+
+  removeUser(id: string):Observable<any> {
+    const _url = `${this.url}/${id}`;
+
+    return this.http.delete<any>(_url);
   }
 }

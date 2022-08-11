@@ -9,6 +9,8 @@ import { HeaderComponent } from './core/header/header.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+
 
 const routes: Routes = [
   {
@@ -19,7 +21,10 @@ const routes: Routes = [
   },
   {
   path:'update-user/:id', component: UpdateUserComponent
-  }
+  },
+  {
+    path:'delete-user/:id', component: DeleteUserComponent
+    }
 ];
 
 @NgModule({
@@ -28,7 +33,8 @@ const routes: Routes = [
     UsersComponent,
     HeaderComponent,
     CreateUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,

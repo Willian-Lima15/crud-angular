@@ -10,7 +10,10 @@
     <tr *ngFor="let users of responseUsersList.data">
       <td>{{users.first_name}}</td>
       <td>{{users.last_name}}</td>
-      <td><a [routerLink]="['/update-user/:id']">Editar</a></td>
+      <td>
+        <a [routerLink]="['/update-user/{{users.id}}']">Editar</a> |
+        <a [routerLink]="['/delete-user/{{users.id}}']">Remover</a>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -1,7 +1,17 @@
-<nav>
-  <h1>CRUD ANGULA</h1>
-  <ul>
-    <li><a [routerLink]="['/users']">Lista de usuário</a></li>
-    <li><a [routerLink]="['/users/create']">Criar novo usuário</a></li>
-  </ul>
+<nav class="navbar navbar-expand-lg bg-ligth">
+  <div class="container-fluid">
+    <div class="ms-8">
+      <h1 class="navbar-brand ">CRUD ANGULA</h1>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/users']">Lista de usuário</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/users/create']">Criar novo usuário</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>

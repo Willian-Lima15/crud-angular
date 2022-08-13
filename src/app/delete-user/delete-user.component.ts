@@ -21,7 +21,7 @@ export class DeleteUserComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.userService.getUser(this.id).subscribe((res)=> {
-      this.user.
+
     });
   }
 

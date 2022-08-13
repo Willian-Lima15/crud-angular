@@ -29,7 +29,7 @@ export class UsersService {
   updateUser(id: string, usuario: RequestUpdate):Observable<ResponseUpdate> {
     const _url = `${this.url}/${id}`;
 
-    return this.http.post<ResponseUpdate>(_url, usuario);
+    return this.http.put<ResponseUpdate>(_url, usuario);
   }
 
   removeUser(id: string):Observable<any> {
